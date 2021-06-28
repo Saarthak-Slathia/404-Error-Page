@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+@-moz-keyframes move-astronaut {
+    100% { -moz-transform: translate(-160px, -160px);}
+}
+@-webkit-keyframes move-astronaut {
+    100% { -webkit-transform: translate(-160px, -160px);}
+}
+@keyframes move-astronaut{
+    100% { -webkit-transform: translate(-160px, -160px); transform:translate(-150px, -160px); }
+}
+@-moz-keyframes rotate-astronaut {
+    100% { -moz-transform: rotate(-720deg);}
+}
+@-webkit-keyframes rotate-astronaut {
+    100% { -webkit-transform: rotate(-720deg);}
+}
+@keyframes rotate-astronaut{
+    100% { -webkit-transform: rotate(-720deg); transform:rotate(-720deg); }
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move{
+    0%{
+        top: 0%;
+        left: 50%;
+    }
+
+    25%{
+        top: 30%;
+        left: 40%;
+    }
+
+    50%{
+        top: 50%;
+        left: 30%;
+    }
+
+    75%{
+        top: 70%;
+        left: 20%;
+    }
+
+    100%{
+        top: 100%;
+        left: 10%;
+    }
+}
+
+*{
+    margin: 0;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #170533, #190a39);
+}
+
+.box_astronaut{
+    z-index: 110 !important;
+    position: absolute;
+    top: 60%;
+    right: 60%;
+    will-change: transform;
+    animation: move-astronaut 50s infinite linear both alternate;
+}
+
+h1 span{
+    color: #8e59ff;
+}
+
+section{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    height: 90vh;
+    width: 90%;
+    border-radius: 15px;
+}
+
+.venus{
+    width: 50px;
+    position: absolute;
+    top: 15%;
+    animation: rotate 40s infinite linear;
+    left: 20%;
+}
+
+.alien{
+    width: 50px;
+    position: absolute;
+    top: 63%;
+    left: 70%;
+}
+
+.sun{
+    position: absolute;
+    top: 73%;
+    left: -15%;
+}
+
+.asteroid{
+    width: 40px;
+    position: absolute;
+    top: 0%;
+    animation: move 20s infinite linear;
+    left: 50%;
+}
+
+.uranus{
+    width: 40px;
+    position: absolute;
+    top: 30%;
+    animation: rotate 600s infinite linear;
+    left: 85%;
+}
+
+.saturn{
+    width: 50px;
+    position: absolute;
+    top: 5%;
+    animation: rotate 600s infinite linear;
+    left: 60%;
+}
+
+.earth{
+    width: 80px;
+    position: absolute;
+    top: 60%;
+    animation: rotate 80s infinite linear;
+    left: 40%;
+}
+
+h3{
+    color: #8e59ff;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.astronaut{
+    width: 70px;
+    animation: rotate-astronaut 300s infinite linear both alternate;
+}
+
+.return{
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 0.7rem 1rem;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 0.5rem 0;
+}
+
+.return:hover{
+    background-color: white;
+    color: #170533;
+}
+
+.title{
+    color: white;
+    font-size: 10rem;
+    letter-spacing: 1rem;
+}
+
+.right{
+    width: 45rem;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left{
+    width: 45rem;
+    height: 90vh;
+    /* background-color: blue; */
+}
+
+@media (max-width: 750px){
+    .venus, .alien, .saturn, .sun{
+        display: none;
+    }
+
+    section{
+        flex-direction: column-reverse;
+        width: 90%!important;
+    }
+
+    .earth{
+        width: auto;
+        bottom: 0;
+    }
+
+    .content{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 650px){
+    .earth, .uranus{
+        display: none;
+    }
+
+    .content h1.title{
+        font-size: 10rem;
+    }
+
+    .content h3{
+        font-size: 15px;
+    }
+}
